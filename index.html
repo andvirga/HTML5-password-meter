@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>HTML5 Password Strength Meter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Password Strength Meter</h1>
+                <h2>using <a href="https://blogs.dropbox.com/tech/2012/04/zxcvbn-realistic-password-strength-estimation/"><b>zxcvbn</b></a> library</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required class="form-control">
+                </div>
+                <div class="form-group-field">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" required class="form-control">
+                </div>
+                <div class="form-group-field">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" required class="form-control">
+                </div>
+                <div class="form-group-field">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" required class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group-field">
+                    <label for="password">Enter password</label>
+                    <div class="showHideWrapper">
+                        <input type="password" id="password" required class="form-control">
+                        <a href="#" aria-label="Show Password" id="passwordButton">Show</a>
+                    </div>
+                    <progress value="0" max="5" id="password-strength-meter"></progress>
+                </div>
+                <div class="form-group-field suggestions">
+                    <p id="password-strength-text" role="alert"></p>
+                    <p id="time-to-crack"></p>
+                    <p id="password-warning"></p>
+                    <p id="password-suggestions"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./meter.js" type="text/javascript"></script>
+</body>
+</html>
